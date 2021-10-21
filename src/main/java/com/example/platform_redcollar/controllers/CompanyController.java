@@ -2,6 +2,7 @@ package com.example.platform_redcollar.controllers;
 
 import com.example.platform_redcollar.models.dto.request.CompanyDtoRequest;
 import com.example.platform_redcollar.models.dto.response.CompanyDtoResponse;
+import com.example.platform_redcollar.models.dto.response.PersonDtoResponse;
 import com.example.platform_redcollar.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

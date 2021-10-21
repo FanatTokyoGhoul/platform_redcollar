@@ -1,6 +1,7 @@
 package com.example.platform_redcollar.controllers;
 
 import com.example.platform_redcollar.models.dto.request.PlatformDtoRequest;
+import com.example.platform_redcollar.models.dto.response.PersonDtoResponse;
 import com.example.platform_redcollar.models.dto.response.PlatformDtoResponse;
 import com.example.platform_redcollar.services.PlatformService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class PlatformController {
     @GetMapping("/{id}")
     public PlatformDtoResponse getPlatform(@PathVariable Long id){
         return platformService.getPlatform(id);
+    }
+
+    @GetMapping("/genres")
+    public List<PersonDtoResponse> getPersonMakingContent(@RequestParam Long id){
+        return platformService.getPersonMakingContent(id);
     }
 
     @PostMapping
