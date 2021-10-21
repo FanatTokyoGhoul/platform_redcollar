@@ -13,7 +13,7 @@ public class ApplicationConfig {
     private String baseUrlTest;
 
     @Bean
-    public WebClient webClientBean(){
+    public WebClient webClientBean() {
         DefaultUriBuilderFactory factory = new DefaultUriBuilderFactory(baseUrlTest);
         factory.setEncodingMode(DefaultUriBuilderFactory.EncodingMode.URI_COMPONENT);
         return WebClient.builder().uriBuilderFactory(factory).baseUrl(baseUrlTest).build();

@@ -30,7 +30,7 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
-    public List<CompanyDtoResponse> findAll(){
+    public List<CompanyDtoResponse> findAll() {
         List<CompanyDtoResponse> listDtos = new ArrayList<>();
         companyRepository.findAll().forEach(company -> {
             listDtos.add(company.toDto());
@@ -39,20 +39,20 @@ public class CompanyService {
         return listDtos;
     }
 
-    public CompanyDtoResponse create(CompanyDtoRequest companyDtoRequest){
+    public CompanyDtoResponse create(CompanyDtoRequest companyDtoRequest) {
         Company company = Company.fromDto(companyDtoRequest);
         return companyRepository.save(company).toDto();
     }
 
 
-    public CompanyDtoResponse getCompany(Long id){
+    public CompanyDtoResponse getCompany(Long id) {
         Optional<Company> optionalCompany = companyRepository.findById(id);
         Company company = optionalCompany.orElseThrow(() -> new NotFoundEntityException(id));
 
         return company.toDto();
     }
 
-    public CompanyDtoResponse update(Long id, CompanyDtoRequest companyDtoRequest){
+    public CompanyDtoResponse update(Long id, CompanyDtoRequest companyDtoRequest) {
         Optional<Company> optionalCompany = companyRepository.findById(id);
         Company company = optionalCompany.orElseThrow(() -> new NotFoundEntityException(id));
 
@@ -61,7 +61,7 @@ public class CompanyService {
         return companyRepository.save(company).toDto();
     }
 
-    public void delete(Long id){
+    public void delete(Long id) {
         companyRepository.deleteById(id);
     }
 }

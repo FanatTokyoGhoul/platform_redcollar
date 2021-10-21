@@ -22,16 +22,16 @@ public class PlatformController {
 
     @GetMapping
     public List<PlatformDtoResponse> findAll() {
-        return  platformService.findAll();
+        return platformService.findAll();
     }
 
     @GetMapping("/{id}")
-    public PlatformDtoResponse getPlatform(@PathVariable Long id){
+    public PlatformDtoResponse getPlatform(@PathVariable Long id) {
         return platformService.getPlatform(id);
     }
 
     @GetMapping("/genres")
-    public List<PersonDtoResponse> getPersonMakingContent(@RequestParam Long id){
+    public List<PersonDtoResponse> getPersonMakingContent(@RequestParam Long id) {
         return platformService.getPersonMakingContent(id);
     }
 

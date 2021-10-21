@@ -18,7 +18,7 @@ public class WebClientService {
         this.webClient = webClient;
     }
 
-    public List<PersonDtoResponse> getPersonGenres(String genres){
+    public List<PersonDtoResponse> getPersonGenres(String genres) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/people/genres")

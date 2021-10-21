@@ -25,13 +25,13 @@ public class Company {
     @MappedCollection(idColumn = "id_company")
     private Set<Platform> platforms;
 
-    public CompanyDtoResponse toDto(){
+    public CompanyDtoResponse toDto() {
         return CompanyDtoResponse.builder().
                 id(id).
                 name(name).build();
     }
 
-    public static Company fromDto(CompanyDtoRequest companyDtoRequest){
+    public static Company fromDto(CompanyDtoRequest companyDtoRequest) {
         return Company.builder()
                 .name(companyDtoRequest.getName())
                 .build();

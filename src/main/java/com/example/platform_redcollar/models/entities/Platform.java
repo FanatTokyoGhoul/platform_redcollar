@@ -26,7 +26,7 @@ public class Platform {
     @NotNull
     private Long idCompany;
 
-    public  PlatformDtoResponse toDto(){
+    public PlatformDtoResponse toDto() {
         return PlatformDtoResponse.builder().
                 id(id).
                 name(name).
@@ -36,7 +36,7 @@ public class Platform {
                 build();
     }
 
-    public static Platform fromDto(PlatformDtoRequest platformDtoRequest){
+    public static Platform fromDto(PlatformDtoRequest platformDtoRequest) {
         return Platform.builder().
                 name(platformDtoRequest.getName()).
                 url(platformDtoRequest.getUrl()).
