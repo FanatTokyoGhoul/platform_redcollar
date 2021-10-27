@@ -8,7 +8,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @Configuration
-@ComponentScan("common.lib")
 public class ApplicationConfig {
 
     @Value("${microservices.url.base.person}")
