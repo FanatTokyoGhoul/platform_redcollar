@@ -1,9 +1,9 @@
 package com.example.platform_redcollar.services;
 
 import com.example.platform_redcollar.exceptions.NotFoundEntityException;
-import com.example.platform_redcollar.models.dto.request.PlatformDtoRequest;
-import com.example.platform_redcollar.models.dto.response.PersonDtoResponse;
-import com.example.platform_redcollar.models.dto.response.PlatformDtoResponse;
+import common.lib.models.dto.request.PlatformDtoRequest;
+import common.lib.models.dto.response.PersonDtoResponse;
+import common.lib.models.dto.response.PlatformDtoResponse;
 import com.example.platform_redcollar.models.entities.Platform;
 import com.example.platform_redcollar.repository.PlatformRepository;
 import org.springframework.beans.factory.annotation.Autowired;

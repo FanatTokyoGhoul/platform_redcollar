@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "microservices.url.test",
-      "type": "java.lang.String",
-      "description": "Description for microservices.url.test."
-  }
-] }
