@@ -1,12 +1,10 @@
 package com.example.platform_redcollar.controllers;
 
 import common.lib.models.dto.request.PlatformDtoRequest;
-//import com.example.platform_redcollar.models.dto.response.PersonDtoResponse;
 import common.lib.models.dto.response.PlatformDtoResponse;
 import common.lib.models.dto.response.PersonDtoResponse;
 import com.example.platform_redcollar.services.PlatformService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

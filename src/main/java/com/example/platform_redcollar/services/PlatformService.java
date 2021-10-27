@@ -1,6 +1,6 @@
 package com.example.platform_redcollar.services;
 
-import com.example.platform_redcollar.exceptions.NotFoundEntityException;
+import common.lib.exception.NotFoundEntityException;
 import common.lib.models.dto.request.PlatformDtoRequest;
 import common.lib.models.dto.response.PersonDtoResponse;
 import common.lib.models.dto.response.PlatformDtoResponse;

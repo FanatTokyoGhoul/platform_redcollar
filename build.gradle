@@ -24,7 +24,7 @@ dependencies {
     implementation 'org.flywaydb:flyway-core:8.0.0'
     implementation 'junit:junit:4.13.1'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation files('./common-lib.jar')
+    implementation files('../common-lib/build/libs/common-lib-1.0-SNAPSHOT-plain.jar')
 
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.5.5'

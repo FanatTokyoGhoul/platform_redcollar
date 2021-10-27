@@ -1,14 +1,14 @@
 package com.example.platform_redcollar.configuration;
 
-import com.example.platform_redcollar.filters.PingFilter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @Configuration
+@ComponentScan("common.lib")
 public class ApplicationConfig {
 
     @Value("${microservices.url.base.person}")
@@ -19,13 +19,5 @@ public class ApplicationConfig {
         DefaultUriBuilderFactory factory = new DefaultUriBuilderFactory(baseUrlTest);
         factory.setEncodingMode(DefaultUriBuilderFactory.EncodingMode.URI_COMPONENT);
         return WebClient.builder().uriBuilderFactory(factory).baseUrl(baseUrlTest).build();
-    }
-
-    @Bean
-    public FilterRegistrationBean<PingFilter> loggingFilter(){
-        FilterRegistrationBean<PingFilter> filterFilterRegistrationBean = new FilterRegistrationBean<>();
-        filterFilterRegistrationBean.setFilter(new PingFilter());
-        filterFilterRegistrationBean.addUrlPatterns("/ping");
-        return filterFilterRegistrationBean;
     }
 }

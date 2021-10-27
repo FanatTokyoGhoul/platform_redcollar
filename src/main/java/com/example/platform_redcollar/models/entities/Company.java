@@ -1,7 +1,8 @@
 package com.example.platform_redcollar.models.entities;
 
-import com.example.platform_redcollar.models.dto.request.CompanyDtoRequest;
-import com.example.platform_redcollar.models.dto.response.CompanyDtoResponse;
+
+import common.lib.models.dto.request.CompanyDtoRequest;
+import common.lib.models.dto.response.CompanyDtoResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
