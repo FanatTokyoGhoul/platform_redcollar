@@ -1,10 +1,10 @@
-CREATE TABLE platform.company
+CREATE TABLE company
 (
     id   serial primary key,
     name character varying(255)
 );
 
-CREATE TABLE platform.platform
+CREATE TABLE platform
 (
     id        serial primary key,
     name      character varying(255),

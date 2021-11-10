@@ -30,8 +30,8 @@ public class PlatformController {
         return platformService.getPlatform(id);
     }
 
-    @GetMapping("/genres")
-    public List<PersonDtoResponse> getPersonMakingContent(@RequestParam Long id) {
+    @GetMapping("{id}/persons")
+    public List<PersonDtoResponse> getPersonMakingContent(@PathVariable Long id) {
         return platformService.getPersonMakingContent(id);
     }
 

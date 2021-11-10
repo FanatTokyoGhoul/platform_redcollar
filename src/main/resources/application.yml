@@ -1,10 +1,26 @@
 server:
   port: 8081
 
+profiles:
+  keycloak:
+    service:
+      username: ${KEYCLOAK_USERNAME_SERVICE:service}
+      password: ${KEYCLOAK_PASSWORD_SERVICE:1}
+    admin:
+      username: ${KEYCLOAK_USERNAME_ADMIN:admin}
+      password: ${KEYCLOAK_PASSWORD_ADMIN:1}
+
+keycloak:
+  auth-server-url: ${KEYCLOAK_URL_AUTH:http://localhost:8484/auth}
+  realm: ${KEYCLOAK_REALM:redcollar}
+  resource: ${KEYCLOAK_CLIENT:client}
+  credentials:
+    secret: ${KEYCLOAK_SECRET:b910082d-9b26-4b73-883e-be57957bc8c3}
+
 microservices:
   url:
     base:
-      person: ${MICROSERVICES_URL_BASE_PERSON:http://localhost:8080}
+      person: ${MICROSERVICES_URL_BASE_PERSON:http://localhost:8083}
     get:
       genres: ${MICROSERVICES_URL_GET_GENRES:/people/genres}
 
@@ -12,6 +28,7 @@ spring:
   flyway:
     baseline-on-migrate: true
     enabled: true
+    schemas: ${SPRING_DATASOURSE_HIKARI_SCHEMA:platform}
   datasource:
     url: ${SPRING_DATASOURSE_URL:jdbc:postgresql://localhost:5432/red_collar}
     username: ${SPRING_DATASOURSE_USERNAME:shadow-fiend}
