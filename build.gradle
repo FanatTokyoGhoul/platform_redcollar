@@ -24,6 +24,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core:8.0.0'
     implementation 'junit:junit:4.13.1'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.5.5'
+    implementation 'org.keycloak:keycloak-spring-boot-starter:15.0.2'
     implementation 'org.keycloak.bom:keycloak-adapter-bom:15.0.2'
     implementation 'org.keycloak:keycloak-admin-client:15.0.2'
     implementation files('../common-lib/build/libs/common-lib-1.0-SNAPSHOT-plain.jar')

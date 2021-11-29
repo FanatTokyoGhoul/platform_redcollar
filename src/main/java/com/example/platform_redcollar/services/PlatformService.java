@@ -46,11 +46,11 @@ public class PlatformService {
         return platform.toDto();
     }
 
-    public List<PersonDtoResponse> getPersonMakingContent(Long id) {
+    public List<PersonDtoResponse> getPersonMakingContent(Long id, String token) {
 
         Platform platform = platformRepository.findById(id).orElseThrow(() -> new NotFoundEntityException(id));
 
-        return webClientService.getPersonGenres(platform.getGenres());
+        return webClientService.getPersonGenres(platform.getGenres(), token);
     }
 
     public PlatformDtoResponse update(Long id, PlatformDtoRequest platformDto) {

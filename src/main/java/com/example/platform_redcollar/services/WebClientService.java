@@ -29,9 +29,7 @@ public class WebClientService {
         this.keycloakApiService = keycloakApiService;
     }
 
-    public List<PersonDtoResponse> getPersonGenres(String genres) {
-
-        String token = keycloakApiService.getAccessToken(serviceLogin, servicePassword);
+    public List<PersonDtoResponse> getPersonGenres(String genres, String token) {
 
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder

@@ -4,10 +4,14 @@ import common.lib.models.dto.request.PlatformDtoRequest;
 import common.lib.models.dto.response.PlatformDtoResponse;
 import common.lib.models.dto.response.PersonDtoResponse;
 import com.example.platform_redcollar.services.PlatformService;
+import org.keycloak.KeycloakSecurityContext;
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+import org.keycloak.representations.IDToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -31,8 +35,11 @@ public class PlatformController {
     }
 
     @GetMapping("{id}/persons")
-    public List<PersonDtoResponse> getPersonMakingContent(@PathVariable Long id) {
-        return platformService.getPersonMakingContent(id);
+    public List<PersonDtoResponse> getPersonMakingContent(@PathVariable Long id, HttpServletRequest httpRequest) {
+        KeycloakAuthenticationToken principal = (KeycloakAuthenticationToken) httpRequest.getUserPrincipal();
+        KeycloakSecurityContext keycloakSecurityContext = principal.getAccount().getKeycloakSecurityContext();
+        String token = keycloakSecurityContext.getTokenString();
+        return platformService.getPersonMakingContent(id, token);
     }
 
     @PostMapping
